@@ -29,6 +29,12 @@ if(isset($_POST['id']) && isset($_POST['pw']) && isset($_POST['r_pw']) && isset(
         history.back();
         </script>";
     }
+      else if(empty($email)) {
+        echo
+        "<script>alert('이메일을 입력하세요.');
+        history.back();
+        </script>";
+    }
 
     else if($pw !== $r_pw) {
         echo
