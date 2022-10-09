@@ -25,6 +25,8 @@
                 <th width="500">제목</th>
                 <th width="120">작성자</th>
                 <th width="100">작성일</th>
+                <th width="100">조회수</th>
+                <th width="100">추천수</th>
             </tr>
         </thead>
         <?php
@@ -45,7 +47,8 @@
           <td width="500"><a href="/read.php?idx=<?php echo $board["idx"];?>"><?php echo $title;?><span class="re_ct">[<?php echo $rep_count; ?>]</span></a></td>
           <td width="120"><?php echo $board['name']?></td>
           <td width="100"><?php echo $board['date']?></td>
-
+          <td width="100"><?php echo $board['hit'] +1; ?></td>
+          <td width="100"><?php echo $board['is_like'] ?></td>
 
         </tr>
       </tbody>
