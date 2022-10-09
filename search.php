@@ -30,7 +30,13 @@
             </tr>
         </thead>
         <?php
-          $sql = mq("select * from board where $catagory like '%$search_con%' order by idx desc");
+          if($catagory == 'all') {
+          
+          $sql = mq("select * from board where (name like '%$search_con%') or (title like '%$search_con%') or (content like '%$search_con%')  order by idx desc");
+          } 
+          else if($catagory=='title' || 'name'|| 'content'){
+            $sql = mq("select * from board where $catagory like '%$search_con%' order by idx desc");
+          }
           while($board = $sql->fetch_array()){
            
           $title=$board["title"]; 
