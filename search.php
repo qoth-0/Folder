@@ -44,7 +44,12 @@
       <tbody>
         <tr>
           <td width="70"><?php echo $board['idx']; ?></td>
-          <td width="500"><a href="/read.php?idx=<?php echo $board["idx"];?>"><?php echo $title;?><span class="re_ct">[<?php echo $rep_count; ?>]</span></a></td>
+          <td width="500"><?php 
+          $lockimg = "<img src='/lock.png' alt='lock' title='lock' with='20' height='20' />";
+          if($board['lock_post']=="1")
+            { ?><a href='/lock.php?idx=<?php echo $board["idx"];?>'><?php echo $title, $lockimg;
+              }else{  ?>
+              <a href="/read.php?idx=<?php echo $board["idx"];?>"><?php echo $title;}?><span class="re_ct">[<?php echo $rep_count; ?>]</span></a></td>
           <td width="120"><?php echo $board['name']?></td>
           <td width="100"><?php echo $board['date']?></td>
           <td width="100"><?php echo $board['hit'] +1; ?></td>
