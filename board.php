@@ -72,6 +72,7 @@
                     <option value="title">제목</option>
                     <option value="name">작성자</option>
                     <option value="content">내용</option>
+                    <option value="all">전체</option>
                 </select>
     
                 <input type="text" name="search" size="40" required="required" /> <button>검색</button>
